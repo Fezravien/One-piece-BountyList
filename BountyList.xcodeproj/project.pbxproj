@@ -15,6 +15,8 @@
 		BA2DB55A2474CAC700B82910 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DB5592474CAC700B82910 /* BountyViewController.swift */; };
 		BA2DB55C24750CB900B82910 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DB55B24750CB900B82910 /* DetailViewController.swift */; };
 		BA2DB55E247EB15000B82910 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2DB55D247EB15000B82910 /* BountyInfo.swift */; };
+		BA46653C24E02C3500175832 /* BountyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA46653B24E02C3500175832 /* BountyViewModel.swift */; };
+		BA46653E24E0300500175832 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA46653D24E0300500175832 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BA2DB5592474CAC700B82910 /* BountyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewController.swift; sourceTree = "<group>"; };
 		BA2DB55B24750CB900B82910 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BA2DB55D247EB15000B82910 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
+		BA46653B24E02C3500175832 /* BountyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewModel.swift; sourceTree = "<group>"; };
+		BA46653D24E0300500175832 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +66,41 @@
 			children = (
 				BA2DB5452474C99600B82910 /* AppDelegate.swift */,
 				BA2DB5472474C99600B82910 /* SceneDelegate.swift */,
-				BA2DB5592474CAC700B82910 /* BountyViewController.swift */,
-				BA2DB55D247EB15000B82910 /* BountyInfo.swift */,
-				BA2DB55B24750CB900B82910 /* DetailViewController.swift */,
+				BA46653A24E02BDB00175832 /* View */,
+				BA46653924E02BD700175832 /* ViewModel */,
+				BA46653824E02BCB00175832 /* Model */,
 				BA2DB54B2474C99600B82910 /* Main.storyboard */,
 				BA2DB54E2474C99700B82910 /* Assets.xcassets */,
 				BA2DB5502474C99700B82910 /* LaunchScreen.storyboard */,
 				BA2DB5532474C99700B82910 /* Info.plist */,
 			);
 			path = BountyList;
+			sourceTree = "<group>";
+		};
+		BA46653824E02BCB00175832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2DB55D247EB15000B82910 /* BountyInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA46653924E02BD700175832 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA46653B24E02C3500175832 /* BountyViewModel.swift */,
+				BA46653D24E0300500175832 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA46653A24E02BDB00175832 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA2DB5592474CAC700B82910 /* BountyViewController.swift */,
+				BA2DB55B24750CB900B82910 /* DetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +176,9 @@
 			files = (
 				BA2DB55E247EB15000B82910 /* BountyInfo.swift in Sources */,
 				BA2DB5462474C99600B82910 /* AppDelegate.swift in Sources */,
+				BA46653E24E0300500175832 /* DetailViewModel.swift in Sources */,
 				BA2DB55A2474CAC700B82910 /* BountyViewController.swift in Sources */,
+				BA46653C24E02C3500175832 /* BountyViewModel.swift in Sources */,
 				BA2DB5482474C99600B82910 /* SceneDelegate.swift in Sources */,
 				BA2DB55C24750CB900B82910 /* DetailViewController.swift in Sources */,
 			);

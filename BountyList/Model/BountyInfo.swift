@@ -8,11 +8,11 @@
 
 import UIKit
 
-
+// Model
 struct BountyInfo {
     let name: String
     let bounty: Int
-    
+
     var image: UIImage? {
         return UIImage(named: "\(name).jpg")
     }
