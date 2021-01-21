@@ -22,6 +22,7 @@
 // > 모델 가지고 있기,, BountyInfo 들
 
 import UIKit
+import NumberScrollAnimatedView
 
 class DetailViewController: UIViewController {
     
@@ -31,12 +32,25 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bountyLableCenterX: NSLayoutConstraint!
     @IBOutlet weak var nameLablelCenterX: NSLayoutConstraint!
     
+    var animatedView: NumberScrollAnimatedView!
+    
+    @IBAction func close(_ sender: Any) {
+            dismiss(animated: true, completion: nil)
+        }
+    
+    // ViewModel을 통한 데이터 객체 생성
     let viewModel = DetailViewModel()
     
+    
+    // MARK: - View 라이프사이클
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animatedView = NumberScrollAnimatedView()
+        
         updateUI()
         prepareAnimation()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,28 +58,49 @@ class DetailViewController: UIViewController {
         showAnimation()
     }
     
+    
+    // MARK: - Animation
     private func prepareAnimation(){
+        
+        
         nameLabel.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).scaledBy(x: 3, y: 3).rotated(by: 180)
-        bountyLabel.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).scaledBy(x: 3, y: 3).rotated(by: 180)
+        
+//        bountyLabel.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).scaledBy(x: 3, y: 3).rotated(by: 180)
+        
+        animatedView.frame = CGRect(x: self.bountyLabel.frame.origin.x-20 , y: self.bountyLabel.frame.origin.y-25, width: 200, height: 40)
+        animatedView.font = UIFont.boldSystemFont(ofSize: 38)
+        animatedView.textColor = .lightGray
+        animatedView.animationDuration = 3
+        animatedView.scrollingDirectionRule = { (_, columnIndex) in return (columnIndex % 2) == 0 ? .down : .up }
+        animatedView.text = bountyLabel.text!
+        self.view.addSubview(animatedView)
         
         nameLabel.alpha = 0
-        bountyLabel.alpha = 0
+//        bountyLabel.alpha = 0
     }
     
     private func showAnimation(){
+        
+
+        
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
                 self.nameLabel.transform = CGAffineTransform.identity
                 self.nameLabel.alpha = 1
         }, completion: nil)
         
-        UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
-                self.bountyLabel.transform = CGAffineTransform.identity
-                self.bountyLabel.alpha = 1
-        }, completion: nil)
+//        UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
+//                self.bountyLabel.transform = CGAffineTransform.identity
+//                self.bountyLabel.alpha = 1
+//        }, completion: nil)
+        
+        animatedView.startAnimation()
+        
         
         UIView.transition(with: imgView, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
+    
+    // MARK: - UI update
     func updateUI(){
         if let bountyInfo = viewModel.bountyInfo {
             imgView.image = bountyInfo.image
@@ -74,9 +109,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func close(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    
 }
 
 

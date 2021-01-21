@@ -44,7 +44,7 @@ class BountyViewController: UIViewController{
         super.viewDidLoad()
     }
 }
-
+// MARK: - UICollectionViewDataSource
 extension BountyViewController: UICollectionViewDataSource {
     //UICollectionViewDataSource
     // 몇개를 보여줄까요?
@@ -64,6 +64,8 @@ extension BountyViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+// MARK: - UICollectionViewDelegate
 extension BountyViewController: UICollectionViewDelegate{
 
     //UICollectionViewDelegate
@@ -73,7 +75,8 @@ extension BountyViewController: UICollectionViewDelegate{
     }
 }
 
-extension BountyViewController:UICollectionViewDelegateFlowLayout{
+// MARK: - UICollectionViewDelegateFlowLayout
+extension BountyViewController: UICollectionViewDelegateFlowLayout{
     //UICollectionViewDelegateFlowLayout
     // 셀 사이즈를 계산할거다 (목표 : 다양한 디바이스에서 일관적인 디자인을 보여주기 위해)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -87,7 +90,7 @@ extension BountyViewController:UICollectionViewDelegateFlowLayout{
     }
 }
 
-
+// MARK: - Cell class
 class GridCell: UICollectionViewCell{
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
