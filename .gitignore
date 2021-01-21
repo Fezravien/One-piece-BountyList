@@ -1,3 +1,7 @@
 *.pod
 *.xcworkspace
 *.xcbkptlist
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+Pods/
