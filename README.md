@@ -6,7 +6,8 @@ One-piece characters bounty simple app
 
 ## Features
 
-- MVVM(practice)
-- Animation
+- MVVM
+- Animation (Spring, Flip)
+- NumberScrollAnimatedView (Number Scroll)
 
-![bountylist](https://user-images.githubusercontent.com/44525561/88791550-e09ed900-d1d4-11ea-908f-ce7f289978c5.gif)
+![bountylist](https://user-images.githubusercontent.com/44525561/105452852-5f775900-5cc2-11eb-9a22-a08fa81923c3.gif)
